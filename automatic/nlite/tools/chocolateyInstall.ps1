@@ -1,15 +1,21 @@
-﻿$packageName = '{{PackageName}}'
-$fileType = "exe"
+﻿$ErrorActionPreference = 'Stop';
 
-$binRoot = "$env:systemdrive\tools"
-if($env:chocolatey_bin_root -ne $null){$binRoot = join-path $env:systemdrive $env:chocolatey_bin_root}
+$binRoot = Get-ToolsLocation
 
-$silentArgs = "/VERYSILENT /DIR=$binRoot\nLite"
-$url = '{{DownloadUrl}}'
-$referer = "http://www.nliteos.com/download.html"
-$file = "$env:TEMP\nLite-{{PackageVersion}}.setup.exe"
+$packageArgs = @{
+  packageName    = $env:ChocolateyPackageName
+  fileType       = 'exe'
+  url            = 'http://www.nliteos.com/download/nLite-1.4.9.3.setup.exe'
+  softwareName   = ''
+  checksum = '3854C1B6C60F2F4A2B07C824661EA518444004C115C04F19415F0429E5B11E08'
+  checksumType   = 'sha256'
+  silentArgs     = '/VERYSILENT /DIR=$binRoot\nLite'
+  validExitCodes = @(0)
+  Options = @{
+    Headers = @{
+      referer = "http://www.nliteos.com/download.html"
+    }
+  }
+}
 
-wget -P "$env:TEMP" --referer=$referer $url
-
-Install-ChocolateyInstallPackage $packageName $fileType $silentArgs $file
-Remove-Item $file
+Install-ChocolateyPackage @packageArgs

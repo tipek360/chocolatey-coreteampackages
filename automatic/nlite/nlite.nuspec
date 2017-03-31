@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
-<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
-    <id>{{PackageName}}</id>
-    <version>{{PackageVersion}}</version>
-    <title>nLite</title>
+    <id>nlite</id>
+    <version>1.4.9.3</version>
+    <packageSourceUrl>https://github.com/chocolatey/chocolatey-coreteampackages/tree/master/automatic/nlite</packageSourceUrl>
     <owners>chocolatey</owners>
+    <title>nLite</title>
     <authors>Dino Nuhagic (nuhi)</authors>
     <projectUrl>http://www.nliteos.com/index.html</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/chocolatey/chocolatey-coreteampackages/edba4a5849ff756e767cba86641bea97ff5721fe/icons/nlite.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/chocolatey/chocolatey-coreteampackages/e0d6387f7afb0d32e8cee8a8451ca98f953c7aa3/icons/nlite.png</iconUrl>
+    <copyright>2004–2008 Dino Nuhagic (nuhi), all rights reserved.</copyright>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <tags>nlite unattended windows admin</tags>
+    <summary>Deployment Tool for the Bootable Unattended Windows ISO
+(Remove components, integrate hotfixes, drivers and themes. Tweaks, patches …)</summary>
     <description>
 Deployment Tool for the Bootable Unattended Windows ISO
 (Remove components, integrate hotfixes, drivers and themes. Tweaks, patches …)
@@ -45,15 +50,11 @@ nLite supports Windows 2000, XP x86/x64 and 2003 x86/x64 in all languages.
 
 It needs .NET Framework 2.0 in order to run …
     </description>
-    <summary>Deployment Tool for the Bootable Unattended Windows ISO
-(Remove components, integrate hotfixes, drivers and themes. Tweaks, patches …)</summary>
-    <releaseNotes />
-    <copyright>2004–2008 Dino Nuhagic (nuhi), all rights reserved.</copyright>
-    <tags>nlite unattended windows admin</tags>
+    <releaseNotes>__REPLACE_OR_REMOVE__Markdown_Okay__May_Be_A_URL</releaseNotes>
     <dependencies>
-      <dependency id="wget" />
+      <dependency id="chocolatey-core.extension" />
+      <dependency id="dotnet3.5" />
     </dependencies>
-    <packageSourceUrl>https://github.com/chocolatey/chocolatey-coreteampackages</packageSourceUrl>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
