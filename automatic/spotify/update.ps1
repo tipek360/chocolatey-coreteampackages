@@ -48,7 +48,7 @@ function GetETagIfChanged() {
 }
 
 function global:au_GetLatest {
-  $downloadUrl = 'https://download.scdn.co/SpotifySetup.exe'
+  $downloadUrl = 'https://download.spotify.com/SpotifyFullSetup.exe'
   $etag = GetETagIfChanged -uri $downloadUrl
 
   if ($etag) {
